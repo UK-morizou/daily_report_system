@@ -38,7 +38,7 @@ public class EmployeesEditServlet extends HttpServlet {
         em.close();
 
         request.setAttribute("employee", e);
-        request.setAttribute("_token", request.getSession().getId());
+        request.setAttribute("_token", request.getSession().getId()); //CSRF セキュリティへの脅威に対する対策(フォームから hidden 要素で送られた値とセッションに格納された値が同一であれば送信を受け付けるようにする)
         request.getSession().setAttribute("employee_id", e.getId());
 
         RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/employees/edit.jsp");
