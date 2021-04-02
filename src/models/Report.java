@@ -61,6 +61,17 @@ public class Report {
     @Column(name = "updated_at", nullable = false)
     private Timestamp updated_at;
 
+    @Column(name = "iine", nullable = false)
+    private int iine;
+
+    public int getIine() {
+        return iine;
+    }
+
+    public void setIine(int iine) {
+        this.iine = iine;
+    }
+
     public Integer getId() {
         return id;
     }

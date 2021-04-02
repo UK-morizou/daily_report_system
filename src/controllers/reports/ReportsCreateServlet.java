@@ -58,6 +58,17 @@ public class ReportsCreateServlet extends HttpServlet {
             r.setCreated_at(currentTime);
             r.setUpdated_at(currentTime);
 
+
+                int iine = 0;
+                /*
+                try {
+                  iine = Integer.parseInt(request.getParameter("iine"));
+                }catch (NumberFormatException e){                }
+
+           // r.setIine(Integer.parseInt(request.getParameter("iine"))); // いいね　の初期値０
+                */
+            r.setIine(iine);
+
             List<String> errors = ReportValidator.validate(r);
             if(errors.size() > 0) {
                 em.close();
